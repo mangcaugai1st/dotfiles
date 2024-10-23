@@ -8,8 +8,10 @@ require("maps")
 
 
 -- require 'lspconfig'..setup{}
+
 require 'lspconfig'.pyright.setup{}
 
+require 'lspconfig'.clangd.setup{}
 
 require 'lspconfig'.gopls.setup({
   settings = {
@@ -23,4 +25,12 @@ require 'lspconfig'.gopls.setup({
   },
 })
 
+require 'lspconfig'.omnisharp.setup {
+  on_attach = on_attach,
+  handlers = handlers,
+  capabilities = capabilities,
+  cmd = { "dotnet", "C:\\Users\\mangc\\AppData\\Local\\nvim-data\\mason\\packages\\omnisharp\\libexec\\OmniSharp.dll"},
+}
+
+-- require'lspconfig'.csharp_ls.setup{}
 
