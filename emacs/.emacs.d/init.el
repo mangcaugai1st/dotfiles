@@ -9,13 +9,16 @@
 (setq inhibit-startup-screen t)
 ;; Display the current line and column number 
 (setq column-number-mode t)
+;; Hide the emphasis markup (e.g. /.../ for italics, *...* for bold, etc) 
+(setq org-hide-emphasis-markers t)
 ;; Display the line numbers 
 (global-display-line-numbers-mode)
 ;; Set default font and font size
 (add-to-list 'default-frame-alist '(font . "NotoMono NF-15"))
 ;; Break lines automatically 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
-
+;; Org indent mode #+STARTUP: indent
+(add-hook 'org-mode-hook 'org-indent-mode)
 
 
 
@@ -58,12 +61,21 @@
 
 
 ;; Custom headline in orgmode
-(defun my/org-mode-custom-headline ()
-  (font-lock-add-keywords
-   nil
-   '(("^\\(\\*+\\) " (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "●")))))))
 
-(add-hook 'org-mode-hook 'my/org-mode-custom-headline)
+;;(defun my/org-mode-custom-headline ()
+;;(font-lock-add-keywords
+;;nil
+;;'(("^\\(\\*+\\) " (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "●")))))))
+;; '(("^\\(\\*+\\) " (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "")))))))
 
+;; (add-hook 'org-mode-hook 'my/org-mode-custom-headline)
+
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([*]\\) "
+                        ;;'(("^ *\\([-]\\) "
+                        ;;'(("^\\(\\*+\\) "
+                        ;;'(("^ *\\(\\*+\\) "
+                        ;;'(("^ *\\([*]+\\) "
+                          (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "●"))))))
 
 
