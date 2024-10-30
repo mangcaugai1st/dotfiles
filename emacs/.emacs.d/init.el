@@ -11,15 +11,19 @@
 (setq column-number-mode t)
 ;; Hide the emphasis markup (e.g. /.../ for italics, *...* for bold, etc) 
 (setq org-hide-emphasis-markers t)
+
+(setq x-select-enable-clipboard t)
 ;; Display the line numbers 
 (global-display-line-numbers-mode)
 ;; Set default font and font size
-(add-to-list 'default-frame-alist '(font . "NotoMono NF-15"))
+;;(add-to-list 'default-frame-alist '(font . "NotoMono NF-15"))
+(set-face-attribute 'default nil :font "NotoMono NF-15" )
 ;; Break lines automatically 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 ;; Org indent mode #+STARTUP: indent
 (add-hook 'org-mode-hook 'org-indent-mode)
-
+;; Maximize screen on startup
+;; (add-hook 'window-setup-hook 'toggle-frame-maximized t)
 
 
 ;; Elisp files 
@@ -36,7 +40,8 @@
 
 ;; Set up package.el to work with MELPA
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives 
+             '("melpa" . "https://melpa.org/packages/"))
 ;; (package-initialize)
 ;; (package-refresh-contents)
 
@@ -54,10 +59,9 @@
 ;; Download Timu-Rouge theme
 (unless (package-installed-p 'timu-rouge-theme)
   (package-install 'timu-rouge-theme))
-
-
 ;; Load Timu-Rouge theme 
 (load-theme 'timu-rouge t)
+
 
 
 ;; Custom headline in orgmode
