@@ -23,5 +23,4 @@
 ;;(add-to-list 'default-frame-alist '(font . "NotoMono NF-15"))
 (set-face-attribute 'default nil :font "NotoMono NF-15" )
 
-;; Load Timu-MacOS theme 
-(load-theme 'timu-macos t)
+
