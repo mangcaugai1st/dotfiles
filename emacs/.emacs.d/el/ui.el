@@ -8,7 +8,7 @@
 (menu-bar-mode 0)
 
 ;; Hide welcome screen in Emacs 
-(setq inhibit-startup-screen nil)
+(setq inhibit-startup-screen t)
 
 ;; Display the current line and column number 
 (setq column-number-mode t)

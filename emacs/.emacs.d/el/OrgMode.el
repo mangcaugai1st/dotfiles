@@ -20,10 +20,15 @@
 
 ;; (add-hook 'org-mode-hook 'my/org-mode-custom-headline)
 
-(font-lock-add-keywords 'org-mode
-                        '(("^ *\\([*]\\) "
+;; (font-lock-add-keywords 'org-mode
+                        ;;'(("^ *\\([*]\\) "
                         ;;'(("^ *\\([-]\\) "
                         ;;'(("^\\(\\*+\\) "
                         ;;'(("^ *\\(\\*+\\) "
                         ;;'(("^ *\\([*]+\\) "
-                          (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "●"))))))
+                          ;;(0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "●"))))))
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(setq org-bullets-bullet-list '("●" "○" "●" "○" "●" "○" "●"))
+
+

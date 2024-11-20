@@ -11,4 +11,8 @@
 ;; Disable AutoSave (Do not create files with the form #file#)
 (setq auto-save-default nil)
 
+;; Enable Evil
+(require 'evil)
+(evil-mode 1)
+
 
