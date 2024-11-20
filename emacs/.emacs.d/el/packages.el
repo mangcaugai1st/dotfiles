@@ -22,10 +22,24 @@
   :ensure t
   :init 
   :config
-  (evil-mode)
-)
+  (evil-mode))
+
 ;; Download Timu-MacOS theme
 (use-package timu-macos-theme
   :ensure t
   :config
   (load-theme 'timu-macos t))
+
+(use-package dashboard
+  :ensure t
+  :config 
+  (dashboard-setup-startup-hook)
+  :custom
+  (dashboard-banner-logo-title "Konnichiwa, Nano desu.")
+  (dashboard-center-content t)
+  (dashboard-vertically-center-content t)
+  (dashboard-startup-banner "~/.emacs.d/resources/nano.png")
+)
+
+  
+
