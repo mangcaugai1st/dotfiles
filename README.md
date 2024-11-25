@@ -3,6 +3,7 @@
 ## Emacs 
 Vanilla Emacs 
 - ***Windows:*** C:\Users\yourUsername\AppData\Roaming\\.emacs.d 
+- ***Linux/BSD:*** ~/.emacs.d
 ### Description
 My Emacs configuration is optimized for org mode and write plain text. 
 
@@ -15,4 +16,4 @@ My Emacs configuration is optimized for org mode and write plain text.
 - A Nerd Font (optional)
 ### Configuration file location 
 - ***Windows:*** C:\Users\yourUsername\AppData\Local\nvim
-
+- ***Linux/BSD:*** ~/.config/nvim
