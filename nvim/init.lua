@@ -2,15 +2,15 @@
 require("config.lazy")
 
 -- Loading settings of the neovim
-require("settings")
+require("config.settings")
 
 -- Loading key mapping
-require("maps")
+require("config.maps")
 
 -- Loading all LSP
-require("lsp")
+require("config.lsp")
 
 -- Loading all LSP snippets
-require("snippets")
+require("config.snippets")
 
 

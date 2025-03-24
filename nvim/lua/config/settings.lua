@@ -12,9 +12,6 @@ vim.opt.encoding = "UTF-8"
 vim.opt.mouse = "a"
 vim.opt.termguicolors = true
 
-
-
-
 vim.wo.signcolumn = 'yes'  -- Alway show diagnostic 
 vim.diagnostic.config({
     virtual_text = true,  -- Enable warning, error text
