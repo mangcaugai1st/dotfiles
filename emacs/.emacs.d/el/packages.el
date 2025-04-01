@@ -11,12 +11,6 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; Sidebar
-(use-package neotree
-  :ensure t
-  :bind ([f8] . neotree-toggle))
-  ;; :bind ("<C-return>" . neotree-toggle))
-
 ;; Download Evil
 (use-package evil
   :ensure t
