@@ -9,8 +9,3 @@ require("config.maps")
 
 -- Loading all LSP
 require("config.lsp")
-
--- Loading all LSP snippets
-require("config.snippets")
-
-

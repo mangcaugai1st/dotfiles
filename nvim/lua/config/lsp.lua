@@ -1,30 +1,18 @@
--- pyright is a lsp for Python
-require 'lspconfig'.pyright.setup{}
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- clangd is a lsp for C/C++
--- require 'lspconfig'.clangd.setup{}
+vim.lsp.config('html', {
+  capabilities = capabilities,
+})
+vim.lsp.enable('clangd')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('angularls')
+vim.lsp.enable('html')
+vim.lsp.enable('cssls')
+vim.lsp.enable('tailwindcss')
 
--- gopls is a lsp for Golang
--- require 'lspconfig'.gopls.setup({
---   settings = {
---     gopls = {
---       analyses = {
---         unusedparams = true,
---       },
---       staticcheck = true,
---       gofumpt = true,
---     },
---   },
--- })
+-- vim.lsp.config("roslyn", {})
 
--- omnisharp is a lsp for C#, .Net
--- require 'lspconfig'.omnisharp.setup {
---   on_attach = on_attach,
---   handlers = handlers,
---   capabilities = capabilities,
---   cmd = { "dotnet", "C:\\Users\\mangc\\AppData\\Local\\nvim-data\\mason\\packages\\omnisharp\\libexec\\OmniSharp.dll"},
--- }
+vim.lsp.enable("roslyn")
 
--- require'lspconfig'.csharp_ls.setup{}
-
--- require 'lspconfig'.hls.setup{}
